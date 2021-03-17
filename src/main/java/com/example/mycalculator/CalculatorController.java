@@ -11,11 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/calculator")
 public class CalculatorController {
 	
+	
+	
 	@Autowired
 	private CalculatorService calculatorService;
+	
+	
 	@GetMapping("/add")
 	public Double add(@RequestParam("a") double numberA, @RequestParam("b") double numberB ) {
+		//calculatorService.setNums(numberA, numberB );
 		return calculatorService.add(numberA,numberB);
+		
 	}
 	
 	@GetMapping("/subtract")
